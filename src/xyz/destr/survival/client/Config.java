@@ -1,6 +1,7 @@
 package xyz.destr.survival.client;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -15,8 +16,10 @@ public class Config {
 	public static UUID userUUID;
 	
 	public static void load() {
+		File file = new File(CONFIG_FILE_NAME);
+		if(!file.exists()) return;
 		try {
-			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(CONFIG_FILE_NAME)));
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 			try {
 				userUUID = UUID.fromString(br.readLine());
 				System.out.println("Config loaded");
