@@ -8,10 +8,11 @@ import xyz.destr.survival.io.view.ActorTypeView;
 import xyz.destr.survival.io.view.ActorView;
 import xyz.destr.survival.io.view.GameView;
 
-public class ActorLogics implements ActorListener {
+public class ExampleActorLogics implements ActorListener {
 	
 	protected Random random = new Random();
 	
+	@Override
 	public void create(Properties propertys) {
 		propertys.setString("name", "Живчики");
 		propertys.setFloat("size", 1.2f);
